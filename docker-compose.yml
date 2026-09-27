@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  redis:
+    image: "redis:alpine"
+    #multi container architecture nstead of starting every service manually with long docker run commands, you used Docker Compose to define two separate applications that work together:
+    #web: Your custom Python web server application running on port 8000.
+    #redis: An in-memory database service pulling the lightweight redis:alpine image from Docker Hub running on port 6379.
